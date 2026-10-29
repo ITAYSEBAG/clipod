@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>קליפוד | קליפים מפודקאסטים</title>
 <meta name="description" content="פרק אחד מהפודקאסט, 6 קליפים אנכיים מוכנים לרילס: הרגעים החזקים, מסגור לאנכי, כתוביות בעברית, כותרת פתיחה וטקסט לפוסט. 2 קליפים ראשונים במתנה.">
-<meta name="theme-color" content="#2632E3">
 <!-- Link previews (WhatsApp, Facebook) need the full address of the image. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
@@ -16,204 +15,198 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="icon" href="img/mark.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/NotoSansHebrew-900.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500&family=Assistant:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<a class="skip" href="#top">דילוג לתוכן</a>
 
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="img/mark.svg" alt="" width="34" height="34">קליפוד</a>
-    <a class="btn small" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
+<header class="hero">
+  <canvas class="shore" data-shore="0.86" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="ראשי">
+    <div class="container">
+      <a class="wordmark" href="#top" aria-label="קליפוד, לראש העמוד">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <rect x="28" y="11" width="44" height="78" rx="9" fill="none" stroke="currentColor" stroke-width="6"/>
+          <g stroke="currentColor" stroke-width="4.4" stroke-linecap="round">
+            <line x1="38" y1="44" x2="38" y2="56"/><line x1="44" y1="39" x2="44" y2="61"/>
+            <line class="mark-lit" x1="50" y1="31" x2="50" y2="69"/>
+            <line x1="56" y1="41" x2="56" y2="59"/><line x1="62" y1="46" x2="62" y2="54"/>
+          </g>
+        </svg>
+        קליפוד
+      </a>
+      <a class="btn btn--small" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
+    </div>
+  </nav>
+
+  <div class="container hero__body">
+    <div class="hero__text">
+      <h1>פרק אחד.<br>6 קליפים מוכנים.</h1>
+      <p class="lead">מעלים פרק מצולם לדרייב, ותוך יומיים מקבלים 6 קליפים אנכיים עם כתוביות בעברית.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
+        <a class="btn" href="#prices">למחירים</a>
+      </div>
+      <p class="hero__note">בלי התחייבות. רק צריך את קובץ הווידאו של הפרק.</p>
+    </div>
+
+    <figure class="deck hero__deck">
+      <div class="deck__head">
+        <span class="deck__name">ד״ר נועה סבג בקול הכנרת</span>
+        <time datetime="2026-10-16">16 באוקטובר 2026</time>
+      </div>
+      <div class="deck__bed">
+        <video id="sample" src="clips/radio.mp4" poster="img/radio-poster.jpg" autoplay muted loop playsinline controls preload="auto"
+          aria-label="קליפ לדוגמה מפודקאסט: הילד שבר שן קדמית? זה לא סתם קרה"></video>
+        <button class="btn btn--small deck__sound" id="sound" type="button" aria-pressed="false">עם סאונד</button>
+      </div>
+      <div class="deck__controls">
+        <button class="btn btn--small" id="play" type="button">השהיה</button>
+        <input class="scrub" id="scrub" type="range" min="0" max="1000" step="1" value="0" aria-label="מיקום בקליפ">
+        <span class="deck__time" id="time">0:00</span>
+      </div>
+      <figcaption>״הילד ששבר שן״, אחד מתשעה קליפים מהראיון.</figcaption>
+    </figure>
   </div>
 </header>
 
 <main id="top">
 
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <p class="eyebrow">קליפים מפודקאסטים מצולמים</p>
-      <h1>פרק אחד.<br><mark>6 קליפים</mark> מוכנים.</h1>
-      <p class="sub">מעלים את הפרק לדרייב, ותוך יומיים מקבלים 6 קליפים אנכיים עם כתוביות בעברית, כותרת פתיחה וטקסט לפוסט.</p>
-      <div class="ctas">
-        <a class="btn" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
-        <a class="btn ghost" href="#prices">למחירים</a>
+<section class="section" id="samples" aria-labelledby="what-h">
+  <div class="container grid stack stack--a">
+    <div class="stack__pane">
+      <h2 id="what-h">מה יש בכל קליפ</h2>
+      <dl class="parts">
+        <div><dt>רגע שעומד לבד</dt><dd>25 עד 75 שניות: רעיון אחד, פתיחה חזקה וסוף שנוחת.</dd></div>
+        <div><dt>מסגור לאנכי</dt><dd>9:16, שוט אחרי שוט, לפי מי שבתמונה.</dd></div>
+        <div><dt>כתוביות בעברית</dt><dd>מסונכרנות לדיבור, והמילה שנאמרת מודגשת.</dd></div>
+        <div><dt>כותרת פתיחה</dt><dd>בשניות הראשונות, כדי שיידעו למה להישאר.</dd></div>
+        <div><dt>טקסט לפוסט</dt><dd>כיתוב מוכן עם שאלה לתגובות, בקובץ ליד כל קליפ.</dd></div>
+      </dl>
+    </div>
+
+    <div class="stack__flow">
+      <div class="flow-head">
+        <h3 id="samples-h">עוד קליפים מאותו פרק</h3>
+        <p>ד״ר נועה סבג ברדיו קול הכנרת: ראיון אחד, ותשעה רגעים ממנו שהפכו לקליפים שעומדים לבד.</p>
       </div>
-      <p class="fine">בלי התחייבות. רק צריך את קובץ הווידאו של הפרק.</p>
-    </div>
-
-    <figure class="phone">
-      <div class="screen">
-        <video id="sample" src="clips/radio.mp4" poster="img/radio-poster.jpg" autoplay muted loop playsinline
-          aria-label="קליפ לדוגמה מפודקאסט: הילד שבר שן קדמית? זה לא סתם קרה"></video>
-        <button class="sound" id="sound" type="button" aria-pressed="false">עם סאונד</button>
-      </div>
-      <figcaption>קליפ לדוגמה, מתוך ראיון ברדיו קול הכנרת</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="band white" aria-labelledby="what-h">
-  <div class="wrap">
-    <div class="head"><h2 id="what-h">מה יש בכל קליפ</h2></div>
-    <div class="features">
-      <div class="feature"><b>רגע שעומד לבד</b><span>25 עד 75 שניות: רעיון אחד, פתיחה חזקה וסוף שנוחת.</span></div>
-      <div class="feature"><b>מסגור לאנכי</b><span>9:16, שוט אחרי שוט, לפי מי שבתמונה.</span></div>
-      <div class="feature"><b>כתוביות בעברית</b><span>מסונכרנות לדיבור, והמילה שנאמרת מודגשת בצהוב.</span></div>
-      <div class="feature"><b>כותרת פתיחה</b><span>בשניות הראשונות, כדי שיידעו למה להישאר.</span></div>
-      <div class="feature"><b>טקסט לפוסט</b><span>כיתוב מוכן עם שאלה לתגובות, בקובץ ליד כל קליפ.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="band light" aria-labelledby="frame-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="frame-h">מהפרק המלא לקליפ אנכי</h2>
-      <p>הפרק מצולם לרוחב, והקליפים צריכים להיות לאורך. בכל שוט המסגור נקבע לפי מי שבתמונה, ומשתנה כשהשוט מתחלף.</p>
-    </div>
-
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-      <defs>
-        <symbol id="scene" viewBox="0 0 320 180">
-          <rect width="320" height="180" fill="#E4E7F6"/>
-          <rect x="138" y="26" width="44" height="28" rx="3" fill="#CBD0EC"/>
-          <rect x="146" y="33" width="28" height="4" rx="2" fill="#2632E3"/>
-          <path d="M56 180 C56 118 128 118 128 180 Z" fill="#2632E3"/>
-          <circle cx="92" cy="82" r="21" fill="#B7BCEB"/>
-          <path d="M192 180 C192 116 264 116 264 180 Z" fill="#0D0F1F"/>
-          <circle cx="228" cy="80" r="21" fill="#C7B9E8"/>
-          <rect y="146" width="320" height="34" fill="#3B416B"/>
-          <rect x="116" y="112" width="11" height="22" rx="5.5" fill="#0D0F1F"/>
-          <line x1="121.5" y1="134" x2="121.5" y2="146" stroke="#0D0F1F" stroke-width="3"/>
-          <rect x="193" y="110" width="11" height="22" rx="5.5" fill="#0D0F1F"/>
-          <line x1="198.5" y1="132" x2="198.5" y2="146" stroke="#0D0F1F" stroke-width="3"/>
-        </symbol>
-        <symbol id="slide" viewBox="0 0 320 180">
-          <rect width="320" height="180" fill="#FFFFFF"/>
-          <rect x="24" y="20" width="150" height="14" rx="3" fill="#0D0F1F"/>
-          <rect x="24" y="42" width="96" height="8" rx="3" fill="#B8BDD8"/>
-          <rect x="60" y="112" width="34" height="48" fill="#B8BDD8"/>
-          <rect x="112" y="92" width="34" height="68" fill="#B8BDD8"/>
-          <rect x="164" y="74" width="34" height="86" fill="#2632E3"/>
-          <rect x="216" y="50" width="34" height="110" fill="#FFD31A"/>
-          <line x1="44" y1="160" x2="276" y2="160" stroke="#0D0F1F" stroke-width="2"/>
-        </symbol>
-        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
-      </defs>
-    </svg>
-
-    <div class="reframe">
-      <figure class="wide" style="margin:0">
-        <svg viewBox="0 0 320 180" role="img" aria-label="פריים מהפרק המלא, מצולם לרוחב: שני אנשים ליד שולחן עם מיקרופונים">
-          <use href="#scene" width="320" height="180"/>
-          <rect x="41.4" y="2" width="101.25" height="176" fill="none" stroke="#FFD31A" stroke-width="3" stroke-dasharray="8 6" rx="4"/>
-        </svg>
-        <figcaption class="cap">הפרק כפי שצולם. המסגרת הצהובה היא החיתוך האנכי.</figcaption>
+      <figure class="clip">
+        <video src="clips/relationship.mp4" poster="img/relationship.jpg" playsinline controls preload="none" aria-label="״הזוגיות שלי השתפרה פלאים״ אחרי טיפול שיניים"></video>
+        <figcaption><b>״הזוגיות שלי השתפרה פלאים״ אחרי טיפול שיניים</b><span class="num">0:29</span></figcaption>
       </figure>
-
-      <div class="outs">
-        <div class="out">
-          <svg viewBox="41.4 0 101.25 180" role="img" aria-label="קליפ אנכי ממוקד באדם אחד"><use href="#scene" width="320" height="180"/></svg>
-          <b>אדם אחד</b><span>חיתוך אנכי סביבו</span>
-        </div>
-        <div class="out">
-          <svg viewBox="0 0 90 160" role="img" aria-label="קליפ אנכי עם שני הדוברים, אחד מעל השני">
-            <svg x="0" y="0" width="90" height="80" viewBox="30 34 123.75 110" preserveAspectRatio="xMidYMid slice"><use href="#scene" width="320" height="180"/></svg>
-            <svg x="0" y="80" width="90" height="80" viewBox="166 32 123.75 110" preserveAspectRatio="xMidYMid slice"><use href="#scene" width="320" height="180"/></svg>
-            <line x1="0" y1="80" x2="90" y2="80" stroke="#0D0F1F" stroke-width="1.5"/>
-          </svg>
-          <b>שניים בשיחה</b><span>אחד למעלה, אחד למטה</span>
-        </div>
-        <div class="out">
-          <svg viewBox="0 0 90 160" role="img" aria-label="קליפ אנכי עם שקופית שלמה במרכז, על רקע מטושטש שלה">
-            <svg x="-30" y="-10" width="150" height="180" viewBox="100 0 120 180" preserveAspectRatio="xMidYMid slice"><g filter="url(#soft)"><use href="#slide" width="320" height="180"/></g></svg>
-            <rect width="90" height="160" fill="#0D0F1F" opacity="0.25"/>
-            <svg x="0" y="54.7" width="90" height="50.6" viewBox="0 0 320 180"><use href="#slide" width="320" height="180"/></svg>
-          </svg>
-          <b>קבוצה, שקופית או מסך</b><span>כל התמונה, על רקע מטושטש</span>
-        </div>
-      </div>
+      <figure class="clip">
+        <video src="clips/fear.mp4" poster="img/fear.jpg" playsinline controls preload="none" aria-label="מפחדים מרופא שיניים? ככה אני מטפלת בפחד"></video>
+        <figcaption><b>מפחדים מרופא שיניים? ככה אני מטפלת בפחד</b><span class="num">0:43</span></figcaption>
+      </figure>
+      <figure class="clip">
+        <video src="clips/all-teeth.mp4" poster="img/all-teeth.jpg" playsinline controls preload="none" aria-label="מאבדים את כל השיניים? זה מה שהגוף אומר"></video>
+        <figcaption><b>מאבדים את כל השיניים? זה מה שהגוף אומר</b><span class="num">0:37</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section class="band blue" aria-labelledby="how-h">
-  <div class="wrap">
-    <div class="head"><h2 id="how-h">איך זה עובד</h2></div>
-    <ol class="steps">
-      <li><h3>מעלים</h3><p>פותחים לכם תיקייה בדרייב. כשיש פרק חדש, מעלים אליה את קובץ הווידאו, וזהו.</p></li>
-      <li><h3>אנחנו עורכים</h3><p>בוחרים את הרגעים החזקים, ממסגרים לאנכי, ומוסיפים כתוביות וכותרת.</p></li>
-      <li><h3>מפרסמים</h3><p>תוך יומיים הקליפים מחכים בתיקייה, כל אחד עם טקסט מוכן לפוסט.</p></li>
+<section class="section" aria-labelledby="frame-h">
+  <div class="container grid stack stack--b">
+    <div class="stack__pane">
+      <h2 id="frame-h">מהפרק המלא לקליפ אנכי</h2>
+      <p class="lede">הפרק מצולם לרוחב, והקליפים צריכים להיות לאורך. בכל שוט המסגור נקבע לפי מי שבתמונה.</p>
+      <ol class="cases">
+        <li><b>אדם אחד</b><span>חיתוך אנכי סביבו.</span></li>
+        <li><b>שניים בשיחה</b><span>אחד למעלה, אחד למטה.</span></li>
+        <li><b>קבוצה, שקופית או מסך</b><span>כל התמונה, על רקע מטושטש.</span></li>
+      </ol>
+    </div>
+
+    <div class="stack__flow">
+      <figure class="frame" data-step="0">
+        <div class="shot shot--wide" data-slot="wide" data-kind="product" data-alt="פריים רחב מתוך פרק מצולם, הדוברת ליד המיקרופון">
+          <img src="img/studio-wide.jpg" width="1600" height="900" loading="lazy" alt="ד״ר נועה סבג באולפן רדיו קול הכנרת, מצולמת לרוחב, ליד מיקרופון ורוד">
+          <span class="crop-line" data-keep aria-hidden="true"></span>
+        </div>
+        <figcaption><b>הפרק כפי שצולם.</b> המסגרת המקווקוות היא החיתוך האנכי.</figcaption>
+      </figure>
+      <figure class="frame" data-step="1">
+        <div class="shot shot--tall" data-slot="one" data-kind="product" data-alt="אותו פריים, חתוך אנכית סביב הדוברת">
+          <img src="img/studio-wide.jpg" width="1600" height="900" loading="lazy" style="object-position: 47% 50%" alt="אותו פריים, חתוך לאנכי סביב ד״ר נועה סבג">
+        </div>
+        <figcaption><b>אדם אחד.</b> חיתוך אנכי סביבו.</figcaption>
+      </figure>
+      <figure class="frame" data-step="2">
+        <div class="shot shot--tall shot--stack" data-kind="product">
+          <div data-slot="two-a" data-alt="הדוברת הראשונה, חתוכה לחצי העליון"><img src="img/studio-pair-noa.jpg" width="720" height="640" loading="lazy" alt="ד״ר נועה סבג, בחצי העליון של הקליפ"></div>
+          <div data-slot="two-b" data-alt="הדובר השני, חתוך לחצי התחתון"><img src="img/studio-pair-host.jpg" width="720" height="640" loading="lazy" alt="המגיש, בחצי התחתון של הקליפ"></div>
+        </div>
+        <figcaption><b>שניים בשיחה.</b> אחד למעלה, אחד למטה.</figcaption>
+      </figure>
+      <figure class="frame" data-step="3">
+        <div class="shot shot--tall shot--fit" data-kind="product">
+          <div class="shot__blur" data-slot="fit-bg" data-alt="אותו פריים רחב, מטושטש כרקע"><img src="img/studio-wide.jpg" width="1600" height="900" loading="lazy" alt=""></div>
+          <div class="shot__sharp" data-slot="fit" data-alt="הפריים הרחב כולו, במרכז"><img src="img/studio-wide.jpg" width="1600" height="900" loading="lazy" alt="הפריים הרחב כולו, במרכז הקליפ האנכי"></div>
+        </div>
+        <figcaption><b>קבוצה, שקופית או מסך.</b> כל התמונה, על רקע מטושטש.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-h">
+  <div class="container how">
+    <h2 id="how-h">איך זה עובד</h2>
+    <ol>
+      <li><span><b>מעלים.</b> פותחים לכם תיקייה בדרייב. כשיש פרק חדש, מעלים אליה את קובץ הווידאו, וזהו.</span></li>
+      <li><span><b>אנחנו עורכים.</b> בוחרים את הרגעים החזקים, ממסגרים לאנכי, ומוסיפים כתוביות וכותרת.</span></li>
+      <li><span><b>מפרסמים.</b> תוך יומיים הקליפים מחכים בתיקייה, כל אחד עם טקסט מוכן לפוסט.</span></li>
     </ol>
   </div>
 </section>
 
-<!-- Samples: finished clips from one episode. Each loads only when it's played (under 8 MB each). -->
-<section class="band white" id="samples" aria-labelledby="samples-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="samples-h">עוד קליפים מאותו פרק</h2>
-      <p>ד"ר נועה סבג ברדיו קול הכנרת: ראיון אחד, ותשעה רגעים ממנו שהפכו לקליפים שעומדים לבד.</p>
-    </div>
-    <div class="samples">
-      <figure class="sample">
-        <video src="clips/relationship.mp4" poster="img/relationship.jpg" playsinline controls preload="none"></video>
-        <figcaption>"הזוגיות שלי השתפרה פלאים" אחרי טיפול שיניים</figcaption>
-      </figure>
-      <figure class="sample">
-        <video src="clips/fear.mp4" poster="img/fear.jpg" playsinline controls preload="none"></video>
-        <figcaption>מפחדים מרופא שיניים? ככה אני מטפלת בפחד</figcaption>
-      </figure>
-      <figure class="sample">
-        <video src="clips/all-teeth.mp4" poster="img/all-teeth.jpg" playsinline controls preload="none"></video>
-        <figcaption>מאבדים את כל השיניים? זה מה שהגוף אומר</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="band light" id="prices" aria-labelledby="prices-h">
-  <div class="wrap">
-    <div class="head">
+<section class="prices" id="prices" aria-labelledby="prices-h">
+  <div class="container">
+    <div class="prices__head">
       <h2 id="prices-h">מחירים</h2>
-      <p>בכל החבילות: בחירת הרגעים, מסגור לאנכי, כתוביות בעברית, כותרת פתיחה וטקסט לפוסט.</p>
+      <p class="lede">בכל החבילות: בחירת הרגעים, מסגור לאנכי, כתוביות בעברית, כותרת פתיחה וטקסט לפוסט.</p>
     </div>
-    <div class="plans">
-      <div class="plan">
-        <h3>פרק בודד</h3>
-        <div class="price"><b>₪590</b></div>
-        <ul><li>פרק אחד</li><li>6 קליפים</li></ul>
-        <p class="per">₪98 לקליפ</p>
-        <a class="btn dark" data-pay="single" data-name="פרק בודד" href="mailto:clipod.il.is@gmail.com">להזמנה</a>
-      </div>
-      <div class="plan">
-        <h3>דו-שבועי</h3>
-        <div class="price"><b>₪990</b><span>לחודש</span></div>
-        <ul><li>2 פרקים בחודש</li><li>12 קליפים</li></ul>
-        <p class="per">₪83 לקליפ</p>
-        <a class="btn dark" data-pay="biweekly" data-name="דו-שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
-      </div>
-      <div class="plan best">
-        <span class="badge">הכי משתלם</span>
-        <h3>שבועי</h3>
-        <div class="price"><b>₪1,790</b><span>לחודש</span></div>
-        <ul><li>4 פרקים בחודש</li><li>24 קליפים</li></ul>
-        <p class="per">₪75 לקליפ</p>
-        <a class="btn" data-pay="weekly" data-name="שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
-      </div>
-    </div>
-    <div class="after-plans">
+    <ol class="plans">
+      <li class="plan">
+        <div><h3>פרק בודד</h3><p class="plan__what">פרק אחד, 6 קליפים</p></div>
+        <p class="plan__per">₪98 לקליפ</p>
+        <p class="plan__price">₪590</p>
+        <a class="btn" data-pay="single" data-name="פרק בודד" href="mailto:clipod.il.is@gmail.com">להזמנה</a>
+      </li>
+      <li class="plan">
+        <div><h3>דו-שבועי</h3><p class="plan__what">2 פרקים בחודש, 12 קליפים</p></div>
+        <p class="plan__per">₪83 לקליפ</p>
+        <p class="plan__price">₪990<small>לחודש</small></p>
+        <a class="btn" data-pay="biweekly" data-name="דו-שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
+      </li>
+      <li class="plan">
+        <div><h3>שבועי</h3><p class="plan__what">4 פרקים בחודש, 24 קליפים</p><p class="plan__best">הכי משתלם</p></div>
+        <p class="plan__per">₪75 לקליפ</p>
+        <p class="plan__price">₪1,790<small>לחודש</small></p>
+        <a class="btn btn--lit" data-pay="weekly" data-name="שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
+      </li>
+    </ol>
+    <div class="prices__notes">
       <p>החבילות החודשיות בלי התחייבות. התשלום בכרטיס אשראי בקישור מאובטח של ישראכרט, והקבלה נשלחת אליכם במייל.</p>
-      <p>עוד לא בטוחים? <a data-demo href="mailto:clipod.il.is@gmail.com">מתחילים מ-2 קליפים במתנה</a> מהפרק האחרון שלכם.</p>
+      <p>עוד לא בטוחים? <a class="text-link" data-demo href="mailto:clipod.il.is@gmail.com">מתחילים מ-2 קליפים במתנה</a> מהפרק האחרון שלכם.</p>
     </div>
+  </div>
+  <div class="horizon" aria-hidden="true">
+    <canvas class="shore" data-shore="0.55"></canvas>
+    <div class="grain"></div>
   </div>
 </section>
 
-<section class="band white" aria-labelledby="faq-h">
-  <div class="wrap">
-    <div class="head"><h2 id="faq-h">שאלות</h2></div>
+<section class="section section--last" aria-labelledby="faq-h">
+  <div class="container grid">
+    <div class="faq-head"><h2 id="faq-h">שאלות</h2></div>
     <div class="faq">
       <details><summary>מה צריך לשלוח?</summary><p>את קובץ הווידאו של הפרק, באיכות הכי גבוהה שיש. אורך הפרק לא משנה.</p></details>
       <details><summary>כמה זמן זה לוקח?</summary><p>עד יומיים מהרגע שהפרק עלה לתיקייה.</p></details>
@@ -226,33 +219,37 @@
   </div>
 </section>
 
-<section class="band blue last" aria-labelledby="last-h">
-  <div class="wrap">
-    <h2 id="last-h">רוצים לראות את זה על הפרק שלכם?</h2>
-    <p>שולחים את הפרק האחרון, ומקבלים 2 קליפים במתנה, בלי התחייבות.</p>
-    <a class="btn" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
-  </div>
-</section>
-
 </main>
 
-<footer>
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="img/mark.svg" alt="" width="34" height="34">קליפוד</a>
-    <ul>
-      <li>מייל: <a data-email href="mailto:clipod.il.is@gmail.com"><span class="ltr">clipod.il.is@gmail.com</span></a></li>
-      <li><a href="https://www.instagram.com/clipod.il/" target="_blank" rel="noopener">אינסטגרם: <span class="ltr">@clipod.il</span></a></li>
-    </ul>
-    <ul>
-      <li><a href="terms.html">תנאי השירות</a></li>
-      <li><a href="privacy.html">מדיניות פרטיות</a></li>
-      <li>© 2026 קליפוד</li>
-    </ul>
+<footer class="close" aria-labelledby="last-h">
+  <div class="container grid close__body">
+    <div class="close__letter">
+      <h2 id="last-h">רוצים לראות את זה על הפרק שלכם?</h2>
+      <p class="lede">שולחים את הפרק האחרון, ומקבלים 2 קליפים במתנה, בלי התחייבות.</p>
+      <div><a class="btn btn--primary" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a></div>
+    </div>
+    <figure class="close__photo">
+      <div data-slot="studio" data-alt="הדוברת ליד שלט התחנה">
+        <img src="img/studio-sign.jpg" width="900" height="1600" loading="lazy" alt="ד״ר נועה סבג ליד שלט רדיו קול הכנרת 106FM">
+      </div>
+      <figcaption>באולפן של קול הכנרת, ביום ההקלטה.</figcaption>
+    </figure>
+    <div class="signoff">
+      <div class="signoff__name"><b>קליפוד</b><span>אוקטובר 2026</span></div>
+      <ul>
+        <li><a data-email href="mailto:clipod.il.is@gmail.com"><span class="ltr">clipod.il.is@gmail.com</span></a></li>
+        <li><a href="https://www.instagram.com/clipod.il/" target="_blank" rel="noopener">אינסטגרם <span class="ltr">@clipod.il</span></a></li>
+        <li><a href="terms.html">תנאי השירות</a></li>
+        <li><a href="privacy.html">מדיניות פרטיות</a></li>
+        <li><a href="#top">לראש העמוד</a></li>
+      </ul>
+      <p>© 2026 קליפוד</p>
+    </div>
   </div>
 </footer>
 
 <a class="contact" data-ask href="mailto:clipod.il.is@gmail.com" aria-label="שליחת מייל לקליפוד">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" focusable="false">
     <rect x="3" y="5.5" width="18" height="13" rx="2.5"/>
     <path d="M4 7.5l8 6 8-6" stroke-linecap="round"/>
   </svg>
@@ -293,16 +290,102 @@
     a.querySelector('span').textContent = CONFIG.email;
   });
 
-  // The sample clip plays muted. Browsers allow sound only after a tap, so the button turns it on.
+  // The deck: the sample clip plays muted. Browsers allow sound only after a tap, so the button turns it on.
   var video = document.getElementById('sample');
   var sound = document.getElementById('sound');
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); video.controls = true; }
+  var play = document.getElementById('play');
+  var scrub = document.getElementById('scrub');
+  var time = document.getElementById('time');
+  var clock = function (s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+  video.controls = false;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); }
+  var label = function () { play.textContent = video.paused ? 'הפעלה' : 'השהיה'; };
+  label();
+  video.addEventListener('play', label);
+  video.addEventListener('pause', label);
+  play.addEventListener('click', function () { if (video.paused) video.play(); else video.pause(); });
   sound.addEventListener('click', function () {
     video.muted = !video.muted;
     if (!video.muted) { video.currentTime = 0; video.play(); }
     sound.textContent = video.muted ? 'עם סאונד' : 'בלי סאונד';
     sound.setAttribute('aria-pressed', String(!video.muted));
   });
+  video.addEventListener('timeupdate', function () {
+    if (!video.duration) return;
+    var v = Math.round(video.currentTime / video.duration * 1000);
+    scrub.value = v;
+    scrub.style.setProperty('--fill', (v / 10) + '%');
+    time.textContent = clock(video.currentTime) + ' / ' + clock(video.duration);
+    scrub.setAttribute('aria-valuetext', time.textContent);
+  });
+  scrub.addEventListener('input', function () {
+    if (video.duration) video.currentTime = scrub.value / 1000 * video.duration;
+    scrub.style.setProperty('--fill', (scrub.value / 10) + '%');
+  });
+
+  // Grain: one 160px noise tile, laid over the night in soft-light.
+  (function () {
+    var c = document.createElement('canvas'); c.width = c.height = 160;
+    var x = c.getContext('2d'), img = x.createImageData(160, 160);
+    for (var i = 0; i < img.data.length; i += 4) { var g = Math.random() * 255; img.data[i] = img.data[i + 1] = img.data[i + 2] = g; img.data[i + 3] = 40; }
+    x.putImageData(img, 0, 0);
+    document.documentElement.style.setProperty('--grain', 'url(' + c.toDataURL() + ')');
+  })();
+
+  // The far shore of the Kinneret at night: a low line of hills, its lit windows, their broken reflections. Drawn once, still.
+  (function () {
+    var css = getComputedStyle(document.documentElement);
+    var tone = function (n) { return css.getPropertyValue(n).trim(); };
+    function draw(canvas) {
+      var r = canvas.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2);
+      if (!r.width || !r.height) return;
+      canvas.width = Math.round(r.width * d); canvas.height = Math.round(r.height * d);
+      var g = canvas.getContext('2d'), W = canvas.width, H = canvas.height, y0 = H * Number(canvas.dataset.shore || 0.7);
+      var seed = 1907; var rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+      var hill = function (x) { var t = x / W; return H * (0.012 + 0.018 * Math.sin(t * 5.1 + 0.6) * Math.sin(t * 2.3) + 0.01 * Math.sin(t * 13.7)); };
+      g.clearRect(0, 0, W, H);
+      g.fillStyle = tone('--color-shore');
+      g.beginPath(); g.moveTo(0, y0);
+      for (var x = 0; x <= W; x += 6 * d) g.lineTo(x, y0 - Math.max(hill(x), 2 * d));
+      g.lineTo(W, y0 + 2 * d); g.lineTo(0, y0 + 2 * d); g.closePath(); g.fill();
+      var warm = tone('--color-light-warm'), cool = tone('--color-light-cool');
+      var n = Math.round(W / (9 * d));
+      for (var i = 0; i < n; i++) {
+        var lx = rnd() * W, ly = y0 - rnd() * Math.max(hill(lx), 2 * d) * 0.85 - d, rad = (0.5 + rnd() * 0.9) * d, a = 0.35 + rnd() * 0.65;
+        g.fillStyle = rnd() < 0.8 ? warm : cool;
+        g.globalAlpha = a; g.beginPath(); g.arc(lx, ly, rad, 0, Math.PI * 2); g.fill();
+        if (a > 0.55) {
+          var len = (8 + rnd() * 46) * d, yy = y0 + 3 * d;
+          while (yy < y0 + len) {
+            var seg = (1.5 + rnd() * 3) * d;
+            g.globalAlpha = a * 0.5 * (1 - (yy - y0) / len);
+            g.fillRect(lx - rad + (rnd() - 0.5) * 2 * d, yy, rad * 2, seg);
+            yy += seg + (1.5 + rnd() * 3) * d;
+          }
+        }
+      }
+      g.globalAlpha = 1;
+    }
+    var all = [].slice.call(document.querySelectorAll('canvas[data-shore]'));
+    var paint = function () { all.forEach(draw); };
+    paint();
+    var t; window.addEventListener('resize', function () { cancelAnimationFrame(t); t = requestAnimationFrame(paint); }, { passive: true });
+  })();
+
+  // The reframing stack: the case whose example is in view lights in the pane beside it.
+  (function () {
+    var cases = document.querySelectorAll('.cases li');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var step = Number(e.target.dataset.step);
+        cases.forEach(function (li, i) { li.setAttribute('aria-current', String(i === step - 1)); });
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('[data-step]').forEach(function (f) { io.observe(f); });
+  })();
 </script>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
 </body>
 </html>
