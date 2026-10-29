@@ -150,14 +150,26 @@
   </div>
 </section>
 
-<!-- Samples: put 3 finished clips in clips/ as 1.mp4, 2.mp4 and 3.mp4 (under 8 MB each), then delete the word hidden below. -->
-<section class="band white" id="samples" aria-labelledby="samples-h" hidden>
+<!-- Samples: finished clips from one episode. Each loads only when it's played (under 8 MB each). -->
+<section class="band white" id="samples" aria-labelledby="samples-h">
   <div class="wrap">
-    <div class="head"><h2 id="samples-h">דוגמאות</h2></div>
+    <div class="head">
+      <h2 id="samples-h">עוד קליפים מאותו פרק</h2>
+      <p>ד"ר נועה סבג ברדיו קול הכנרת: ראיון אחד, ותשעה רגעים ממנו שהפכו לקליפים שעומדים לבד.</p>
+    </div>
     <div class="samples">
-      <video src="clips/1.mp4" muted loop playsinline controls preload="metadata"></video>
-      <video src="clips/2.mp4" muted loop playsinline controls preload="metadata"></video>
-      <video src="clips/3.mp4" muted loop playsinline controls preload="metadata"></video>
+      <figure class="sample">
+        <video src="clips/relationship.mp4" poster="img/relationship.jpg" playsinline controls preload="none"></video>
+        <figcaption>"הזוגיות שלי השתפרה פלאים" אחרי טיפול שיניים</figcaption>
+      </figure>
+      <figure class="sample">
+        <video src="clips/fear.mp4" poster="img/fear.jpg" playsinline controls preload="none"></video>
+        <figcaption>מפחדים מרופא שיניים? ככה אני מטפלת בפחד</figcaption>
+      </figure>
+      <figure class="sample">
+        <video src="clips/all-teeth.mp4" poster="img/all-teeth.jpg" playsinline controls preload="none"></video>
+        <figcaption>מאבדים את כל השיניים? זה מה שהגוף אומר</figcaption>
+      </figure>
     </div>
   </div>
 </section>
