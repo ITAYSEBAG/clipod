@@ -41,7 +41,7 @@
         </svg>
         קליפוד
       </a>
-      <a class="btn btn--small" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
+      <a class="btn btn--small" data-demo href="#start">2 קליפים במתנה</a>
     </div>
   </nav>
 
@@ -50,7 +50,7 @@
       <h1>פרק אחד.<br>6 קליפים מוכנים.</h1>
       <p class="lead">מעלים פרק מצולם לדרייב, ותוך יומיים מקבלים 6 קליפים אנכיים עם כתוביות בעברית.</p>
       <div class="hero__actions">
-        <a class="btn btn--primary" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a>
+        <a class="btn btn--primary" data-demo href="#start">2 קליפים במתנה</a>
         <a class="btn" href="#prices">למחירים</a>
       </div>
       <p class="hero__note">בלי התחייבות. רק צריך את קובץ הווידאו של הפרק.</p>
@@ -178,24 +178,24 @@
         <div><h3>פרק בודד</h3><p class="plan__what">פרק אחד, 6 קליפים</p></div>
         <p class="plan__per">₪98 לקליפ</p>
         <p class="plan__price">₪590</p>
-        <a class="btn" data-pay="single" data-name="פרק בודד" href="mailto:clipod.il.is@gmail.com">להזמנה</a>
+        <a class="btn" data-pay="single" data-name="פרק בודד" href="#start">להזמנה</a>
       </li>
       <li class="plan">
         <div><h3>דו-שבועי</h3><p class="plan__what">2 פרקים בחודש, 12 קליפים</p></div>
         <p class="plan__per">₪83 לקליפ</p>
         <p class="plan__price">₪990<small>לחודש</small></p>
-        <a class="btn" data-pay="biweekly" data-name="דו-שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
+        <a class="btn" data-pay="biweekly" data-name="דו-שבועי" href="#start">להצטרפות</a>
       </li>
       <li class="plan">
         <div><h3>שבועי</h3><p class="plan__what">4 פרקים בחודש, 24 קליפים</p><p class="plan__best">הכי משתלם</p></div>
         <p class="plan__per">₪75 לקליפ</p>
         <p class="plan__price">₪1,790<small>לחודש</small></p>
-        <a class="btn btn--lit" data-pay="weekly" data-name="שבועי" href="mailto:clipod.il.is@gmail.com">להצטרפות</a>
+        <a class="btn btn--lit" data-pay="weekly" data-name="שבועי" href="#start">להצטרפות</a>
       </li>
     </ol>
     <div class="prices__notes">
       <p>החבילות החודשיות בלי התחייבות. התשלום בכרטיס אשראי בקישור מאובטח של ישראכרט, והקבלה נשלחת אליכם במייל.</p>
-      <p>עוד לא בטוחים? <a class="text-link" data-demo href="mailto:clipod.il.is@gmail.com">מתחילים מ-2 קליפים במתנה</a> מהפרק האחרון שלכם.</p>
+      <p>עוד לא בטוחים? <a class="text-link" data-demo href="#start">מתחילים מ-2 קליפים במתנה</a> מהפרק האחרון שלכם.</p>
     </div>
   </div>
   <div class="horizon" aria-hidden="true">
@@ -226,7 +226,27 @@
     <div class="close__letter">
       <h2 id="last-h">רוצים לראות את זה על הפרק שלכם?</h2>
       <p class="lede">שולחים את הפרק האחרון, ומקבלים 2 קליפים במתנה, בלי התחייבות.</p>
-      <div><a class="btn btn--primary" data-demo href="mailto:clipod.il.is@gmail.com">2 קליפים במתנה</a></div>
+      <form class="start" id="start" data-endpoint="" novalidate>
+        <fieldset class="seg">
+          <legend>מה מעניין אתכם?</legend>
+          <div class="seg__options">
+            <input type="radio" name="choice" id="c-demo" value="demo" checked><label for="c-demo">2 קליפים במתנה</label>
+            <input type="radio" name="choice" id="c-single" value="single"><label for="c-single">פרק בודד</label>
+            <input type="radio" name="choice" id="c-biweekly" value="biweekly"><label for="c-biweekly">דו-שבועי</label>
+            <input type="radio" name="choice" id="c-weekly" value="weekly"><label for="c-weekly">שבועי</label>
+          </div>
+        </fieldset>
+        <div class="start__fields">
+          <div class="field"><label for="f-email">המייל שלכם</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" required></div>
+          <div class="field"><label for="f-podcast">שם הפודקאסט</label><input id="f-podcast" name="podcast" type="text" autocomplete="organization"></div>
+        </div>
+        <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="start__send">
+          <button class="btn btn--primary" type="submit">שלחו לי מייל</button>
+          <p class="start__note">הצעד הבא מגיע במייל מהכתובת <span class="ltr">clipod.il.is@gmail.com</span></p>
+        </div>
+        <p class="start__help" id="start-help" role="status" aria-live="polite"></p>
+      </form>
     </div>
     <figure class="close__photo">
       <div data-slot="studio" data-alt="הדוברת ליד שלט התחנה">
@@ -256,35 +276,72 @@
 </a>
 
 <script>
-  // Fill these in as they exist. An empty link falls back to an email to the business with the right subject.
+  // endpoint: the web app address of the form script (apps-script/Code.gs on clipod.il.is@gmail.com). The payment
+  // links live in that script, which emails them; the site never shows them.
   var CONFIG = {
     email: 'clipod.il.is@gmail.com',
-    demoForm: '',          // the Google Form for the free demo
-    pay: {
-      single: '',          // Isracard 360 link, ₪590
-      biweekly: '',        // Isracard 360 link, ₪990 a month
-      weekly: ''           // Isracard 360 link, ₪1,790 a month
-    }
+    endpoint: ''
   };
 
   function mail(subject, body) {
     return 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + (body ? '&body=' + encodeURIComponent(body) : '');
   }
-  // A web link opens in a new tab; an email link opens the mail app.
-  function point(a, url) {
-    a.href = url;
-    if (/^https?:/.test(url)) { a.target = '_blank'; a.rel = 'noopener'; }
-  }
 
-  document.querySelectorAll('[data-demo]').forEach(function (a) {
-    point(a, CONFIG.demoForm || mail('2 קליפים במתנה',
-      'היי,\nאשמח ל-2 קליפים במתנה מהפרק האחרון של הפודקאסט שלנו.\n\nשם הפודקאסט:\nקישור לקובץ הווידאו של הפרק (דרייב, WeTransfer או יוטיוב):\n'));
+  // Every "2 קליפים במתנה" and every plan button leads to the one form at the close, with that choice picked.
+  var form = document.getElementById('start');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function toForm(e, choice) {
+    e.preventDefault();
+    var r = form.querySelector('input[name="choice"][value="' + choice + '"]');
+    if (r) r.checked = true;
+    form.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' });
+    form.email.focus({ preventScroll: true });
+  }
+  document.querySelectorAll('[data-demo]').forEach(function (a) { a.addEventListener('click', function (e) { toForm(e, 'demo'); }); });
+  document.querySelectorAll('[data-pay]').forEach(function (a) { a.addEventListener('click', function (e) { toForm(e, a.dataset.pay); }); });
+  document.querySelectorAll('[data-ask]').forEach(function (a) { a.href = mail('שאלה על קליפוד'); });
+
+  // The form: the script emails the visitor the next step. "An email is waiting" shows only once it answered ok.
+  form.dataset.endpoint = CONFIG.endpoint;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var help = document.getElementById('start-help'), btn = form.querySelector('button[type="submit"]'), email = form.email;
+    var to = email.value.trim();
+    var ok = to && email.checkValidity();
+    email.toggleAttribute('aria-invalid', !ok);
+    if (!ok) {
+      email.setAttribute('aria-describedby', help.id);
+      help.textContent = 'המייל הזה נראה חסר. כתבו אותו כך: name@example.com.';
+      email.focus();
+      return;
+    }
+    var picked = form.querySelector('input[name="choice"]:checked');
+    var label = picked ? form.querySelector('label[for="' + picked.id + '"]').textContent : '2 קליפים במתנה';
+    if (!form.dataset.endpoint) {
+      // Not connected yet: open a ready email to the business instead, and say so.
+      window.location.href = mail(label, 'היי,\nאשמח לפרטים על "' + label + '".\n\nהמייל שלי: ' + to + '\nשם הפודקאסט: ' + form.podcast.value.trim() + '\n');
+      help.textContent = 'פתחנו לכם מייל מוכן אלינו. שלחו אותו, ונחזור אליכם במייל.';
+      return;
+    }
+    btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
+    help.textContent = 'שולחים…';
+    fetch(form.dataset.endpoint, { method: 'POST', body: new URLSearchParams(new FormData(form)) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.ok) {
+          help.textContent = 'שלחנו מייל ל-' + to + ' עם הצעד הבא. הוא מחכה לכם בתיבה, ואם הוא לא שם, הציצו בספאם.';
+        } else if (res.error === 'email') {
+          email.setAttribute('aria-invalid', '');
+          help.textContent = 'המייל הזה לא נראה תקין. בדקו אותו ונסו שוב.';
+          email.focus();
+        } else {
+          throw new Error('not sent');
+        }
+      })
+      .catch(function () { help.textContent = 'זה לא עבר. נסו שוב בעוד דקה, או כתבו לנו ל-' + CONFIG.email + '.'; })
+      .then(function () { btn.disabled = false; btn.removeAttribute('aria-busy'); });
   });
-  document.querySelectorAll('[data-pay]').forEach(function (a) {
-    point(a, CONFIG.pay[a.dataset.pay] || mail('הצטרפות לחבילה ' + a.dataset.name,
-      'היי,\nאשמח להצטרף לחבילה "' + a.dataset.name + '" של קליפוד.\n\nשם הפודקאסט:\n'));
-  });
-  document.querySelectorAll('[data-ask]').forEach(function (a) { point(a, mail('שאלה על קליפוד')); });
   document.querySelectorAll('[data-email]').forEach(function (a) {
     a.href = 'mailto:' + CONFIG.email;
     a.querySelector('span').textContent = CONFIG.email;
