@@ -51,7 +51,7 @@
       <p class="lead">מעלים פרק מצולם לדרייב, ותוך יומיים מקבלים 6 קליפים אנכיים עם כתוביות בעברית.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" data-demo href="#start">2 קליפים במתנה</a>
-        <a class="btn" href="#prices">למחירים</a>
+        <a class="btn" href="#prices">כמה זה עולה?</a>
       </div>
       <p class="hero__note">בלי התחייבות. רק צריך את קובץ הווידאו של הפרק.</p>
     </div>
@@ -170,31 +170,19 @@
 <section class="prices" id="prices" aria-labelledby="prices-h">
   <div class="container">
     <div class="prices__head">
-      <h2 id="prices-h">מחירים</h2>
-      <p class="lede">בכל החבילות: בחירת הרגעים, מסגור לאנכי, כתוביות בעברית, כותרת פתיחה וטקסט לפוסט.</p>
+      <h2 id="prices-h">כמה זה עולה?</h2>
+      <p class="lede">אין מחירון קבוע: לכל פודקאסט בונים הצעה משלו. ובכל הצעה: בחירת הרגעים, מסגור לאנכי, כתוביות בעברית, כותרת פתיחה וטקסט לפוסט.</p>
     </div>
-    <ol class="plans">
-      <li class="plan">
-        <div><h3>פרק בודד</h3><p class="plan__what">פרק אחד, 6 קליפים</p></div>
-        <p class="plan__per">₪98 לקליפ</p>
-        <p class="plan__price">₪590</p>
-        <a class="btn" data-pay="single" data-name="פרק בודד" href="#start">להזמנה</a>
-      </li>
-      <li class="plan">
-        <div><h3>דו-שבועי</h3><p class="plan__what">2 פרקים בחודש, 12 קליפים</p></div>
-        <p class="plan__per">₪83 לקליפ</p>
-        <p class="plan__price">₪990<small>לחודש</small></p>
-        <a class="btn" data-pay="biweekly" data-name="דו-שבועי" href="#start">להצטרפות</a>
-      </li>
-      <li class="plan">
-        <div><h3>שבועי</h3><p class="plan__what">4 פרקים בחודש, 24 קליפים</p><p class="plan__best">הכי משתלם</p></div>
-        <p class="plan__per">₪75 לקליפ</p>
-        <p class="plan__price">₪1,790<small>לחודש</small></p>
-        <a class="btn btn--lit" data-pay="weekly" data-name="שבועי" href="#start">להצטרפות</a>
-      </li>
+    <ol class="rules">
+      <li class="rule"><h3>משלמים לפי קליף</h3><p>על הקליפים שמקבלים, לא על שעות עבודה. שישה מכל פרק, או כמה שמתאים לכם.</p></li>
+      <li class="rule"><h3>יותר קליפים, פחות לכל קליף</h3><p>ככל שמזמינים יותר קליפים בחודש, כל אחד מהם עולה פחות.</p></li>
+      <li class="rule"><h3>מנוי ארוך, מחיר נמוך</h3><p>מנוי ששולם מראש לכמה חודשים מוריד עוד את המחיר של כל קליף.</p></li>
     </ol>
+    <div class="prices__ask">
+      <a class="btn btn--lit" data-quote href="#start">לבקשת הצעת מחיר</a>
+      <p>כותבים כמה פרקים בחודש ולכמה זמן, ומקבלים הצעה במייל. התשלום בכרטיס אשראי בקישור מאובטח של ישראכרט, והקבלה נשלחת אליכם במייל.</p>
+    </div>
     <div class="prices__notes">
-      <p>החבילות החודשיות בלי התחייבות. התשלום בכרטיס אשראי בקישור מאובטח של ישראכרט, והקבלה נשלחת אליכם במייל.</p>
       <p>עוד לא בטוחים? <a class="text-link" data-demo href="#start">מתחילים מ-2 קליפים במתנה</a> מהפרק האחרון שלכם.</p>
     </div>
   </div>
@@ -214,7 +202,7 @@
       <details><summary>ומה אם קליפ לא מתאים?</summary><p>כותבים לנו, ומחליפים אותו ברגע אחר מאותו פרק.</p></details>
       <details><summary>למי שייכים הקליפים?</summary><p>לכם. מפרסמים איפה שרוצים: אינסטגרם, טיקטוק, יוטיוב שורטס או לינקדאין.</p></details>
       <details><summary>הפודקאסט שלנו רק באודיו. זה מתאים?</summary><p>עוד לא. כרגע אנחנו עובדים רק עם פרקים מצולמים.</p></details>
-      <details><summary>אפשר לבטל?</summary><p>כן. מבטלים חבילה חודשית מתי שרוצים, והביטול חל מהחיוב הבא.</p></details>
+      <details><summary>אפשר לבטל?</summary><p>מנוי חודשי מבטלים מתי שרוצים, והביטול חל מהחיוב הבא. במנוי ששולם מראש לכמה חודשים, התנאים כתובים בהצעה שאישרתם.</p></details>
     </div>
   </div>
 </section>
@@ -231,14 +219,13 @@
           <legend>מה מעניין אתכם?</legend>
           <div class="seg__options">
             <input type="radio" name="choice" id="c-demo" value="demo" checked><label for="c-demo">2 קליפים במתנה</label>
-            <input type="radio" name="choice" id="c-single" value="single"><label for="c-single">פרק בודד</label>
-            <input type="radio" name="choice" id="c-biweekly" value="biweekly"><label for="c-biweekly">דו-שבועי</label>
-            <input type="radio" name="choice" id="c-weekly" value="weekly"><label for="c-weekly">שבועי</label>
+            <input type="radio" name="choice" id="c-quote" value="quote"><label for="c-quote">הצעת מחיר</label>
           </div>
         </fieldset>
         <div class="start__fields">
           <div class="field"><label for="f-email">המייל שלכם</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" required></div>
           <div class="field"><label for="f-podcast">שם הפודקאסט</label><input id="f-podcast" name="podcast" type="text" autocomplete="organization"></div>
+          <div class="field field--wide"><label for="f-details">מה תרצו? (לא חובה)</label><textarea id="f-details" name="details" rows="3" maxlength="1000" placeholder="למשל: 4 פרקים בחודש, 6 קליפים מכל פרק, לחצי שנה"></textarea></div>
         </div>
         <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="start__send">
@@ -287,7 +274,7 @@
     return 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(subject) + (body ? '&body=' + encodeURIComponent(body) : '');
   }
 
-  // Every "2 קליפים במתנה" and every plan button leads to the one form at the close, with that choice picked.
+  // Every "2 קליפים במתנה" and every quote button leads to the one form at the close, with that choice picked.
   var form = document.getElementById('start');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function toForm(e, choice) {
@@ -298,7 +285,7 @@
     form.email.focus({ preventScroll: true });
   }
   document.querySelectorAll('[data-demo]').forEach(function (a) { a.addEventListener('click', function (e) { toForm(e, 'demo'); }); });
-  document.querySelectorAll('[data-pay]').forEach(function (a) { a.addEventListener('click', function (e) { toForm(e, a.dataset.pay); }); });
+  document.querySelectorAll('[data-quote]').forEach(function (a) { a.addEventListener('click', function (e) { toForm(e, 'quote'); }); });
   document.querySelectorAll('[data-ask]').forEach(function (a) { a.href = mail('שאלה על קליפוד'); });
 
   // The form: the script emails the visitor the next step. "An email is waiting" shows only once it answered ok.
@@ -319,7 +306,7 @@
     var label = picked ? form.querySelector('label[for="' + picked.id + '"]').textContent : '2 קליפים במתנה';
     if (!form.dataset.endpoint) {
       // Not connected yet: open a ready email to the business instead, and say so.
-      window.location.href = mail(label, 'היי,\nאשמח לפרטים על "' + label + '".\n\nהמייל שלי: ' + to + '\nשם הפודקאסט: ' + form.podcast.value.trim() + '\n');
+      window.location.href = mail(label, 'היי,\nאשמח לפרטים על "' + label + '".\n\nהמייל שלי: ' + to + '\nשם הפודקאסט: ' + form.podcast.value.trim() + '\n' + form.details.value.trim() + '\n');
       help.textContent = 'פתחנו לכם מייל מוכן אלינו. שלחו אותו, ונחזור אליכם במייל.';
       return;
     }
