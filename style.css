@@ -114,6 +114,7 @@ html:not(.js) .deck__controls, html:not(.js) .deck__sound { display: none; }
 .clip video { width: min(100%, 360px); aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--radius-card); background: var(--color-water); outline: 1px solid var(--outline-photo); outline-offset: -1px; }
 .clip figcaption { width: min(100%, 360px); display: flex; justify-content: space-between; gap: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
 .clip figcaption b { font-weight: 500; color: var(--color-ink); }
+.clips-row { display: contents; }
 .flow-head { display: grid; gap: var(--space-xs); }
 .flow-head h3 { max-width: 24ch; }
 .flow-head p { color: var(--color-muted); max-width: 46ch; }
@@ -218,6 +219,14 @@ html:not(.js) .deck__controls, html:not(.js) .deck__sound { display: none; }
 .contact:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .contact { transition: color var(--dur-short) linear; } .contact:active { transform: none; } .cases li { transition: none; } }
 
+/* The phone dock: the offer, one tap away, beside the mail button. Desktop keeps the hero and the close for that. */
+.dock { display: none; }
+@media (max-width: 40rem) {
+  .dock { display: inline-flex; position: fixed; z-index: var(--z-sticky); bottom: calc(var(--space-md) + env(safe-area-inset-bottom, 0px)); inset-inline-start: var(--space-md); inset-inline-end: calc(var(--space-md) + 52px + var(--space-sm)); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+  .dock.is-on { opacity: 1; transform: none; pointer-events: auto; }
+}
+@media (max-width: 40rem) and (prefers-reduced-motion: reduce) { .dock { transition: opacity var(--dur-short) linear; transform: none; } }
+
 /* ---------- the legal pages ---------- */
 
 .doc { max-width: 720px; display: grid; gap: var(--space-md); padding-block: var(--space-2xl) var(--space-3xl); }
@@ -240,6 +249,10 @@ html:not(.js) .deck__controls, html:not(.js) .deck__sound { display: none; }
   .stack__pane { position: static; padding-block-end: var(--space-lg); }
   .stack--a .stack__pane, .stack--a .stack__flow, .stack--b .stack__pane, .stack--b .stack__flow { grid-column: 1 / -1; grid-row: auto; }
   .stack__flow { gap: var(--space-2xl); }
+  /* The three extra clips: a row that swipes, each clip most of the screen wide, the next one peeking in. */
+  .clips-row { display: flex; gap: var(--space-md); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; margin-inline: calc(-1 * var(--space-md)); padding-inline: var(--space-md); padding-block-end: var(--space-xs); scrollbar-width: none; }
+  .clips-row::-webkit-scrollbar { display: none; }
+  .clips-row .clip { flex: 0 0 min(78%, 320px); scroll-snap-align: center; }
   .rule { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xs); }
   .faq-head, .faq { grid-column: 1 / -1; }
   .faq-head { margin-block-end: var(--space-xl); }
